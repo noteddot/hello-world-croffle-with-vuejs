@@ -48,7 +48,7 @@ jobs:
 
       - name: Install playwright browsers
         working-directory: .croffle/test
-        run: npm ci && npx playwright install
+        run: npm ci && npx playwright install-deps
 
       - name: Run tests
         working-directory: .croffle/test
