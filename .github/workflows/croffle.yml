@@ -46,13 +46,13 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Install playwright browsers
-        working-directory: .croffle/test
-        run: npm ci && npx playwright install-deps
+      # - name: Install playwright browsers
+      #   working-directory: .croffle/test
+      #   run: npm ci && npx playwright install-deps
 
       - name: Run tests
         working-directory: .croffle/test
-        run: npx playwright test
+        run: npm ci && npx playwright install-deps && npx playwright test
 
       - name: Upload result
         uses: actions/upload-artifact@v3
