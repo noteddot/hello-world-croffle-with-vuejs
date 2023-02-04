@@ -52,7 +52,11 @@ jobs:
 
       - name: Run tests
         working-directory: .croffle/test
-        run: npm ci && npx playwright install-deps && npx playwright test
+        run: |
+          npm ci
+          npx playwright install
+          npx playwright install-deps
+          npx playwright test
 
       - name: Upload result
         uses: actions/upload-artifact@v3
