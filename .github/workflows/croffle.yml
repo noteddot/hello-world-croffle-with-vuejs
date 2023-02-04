@@ -49,5 +49,5 @@ jobs:
       - name: Upload dist
         uses: actions/upload-artifact@v3
         with:
-          name: dist
-          path: dist
+          name: index.html
+          path: dist/index.html
