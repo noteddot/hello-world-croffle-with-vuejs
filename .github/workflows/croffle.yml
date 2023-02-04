@@ -46,8 +46,14 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Upload dist
+      - name: Install playwright browsers
+        run: cd .croffle/test && npx playwright install --with-deps
+
+      - name: Run tests
+        run: cd .croffle/test && npx playwright test
+
+      - name: Upload result
         uses: actions/upload-artifact@v3
         with:
-          name: index.html
-          path: dist/index.html
+          name: ${{ github.sha }}
+          path: .croffle/test/playwright-report/results.json
