@@ -46,7 +46,7 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: |
